@@ -38,6 +38,12 @@ public class UsuarioRestController {
     	return usrRepo.buscarRepartidores();
     }
 
+    @GetMapping("/buscarlogin/{correo}/{contrasenia}")
+    public Usuario buscarLogin(@PathVariable String correo, @PathVariable String contrasenia){
+    	return usrRepo.buscarLogin(correo, contrasenia);
+    }
+
+    
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> getUsuarioById(@PathVariable(value = "id") int id)
         throws ResourceNotFoundException {
@@ -79,11 +85,6 @@ public class UsuarioRestController {
         return response;
     }
     
-    //Querys
-    @GetMapping("/buscarlogin/{correo}/{contrasenia}")
-    public Usuario buscarLogin(@PathVariable String correo, @PathVariable String contrasenia){
-    	return usrRepo.buscarLogin(correo, contrasenia);
-    }
     
     
 }

@@ -80,7 +80,7 @@ public class UsuarioRestController {
     }
     
     //Querys
-    @GetMapping(value="/buscarlogin/{correo}/{contrasenia}")
+    @GetMapping("/buscarlogin/{correo}/{contrasenia}")
     public Usuario buscarLogin(@PathVariable String correo, @PathVariable String contrasenia){
     	return usrRepo.buscarLogin(correo, contrasenia);
     }
